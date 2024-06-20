@@ -12,6 +12,8 @@ set(FETCHCONTENT_QUIET FALSE)
 find_package(Threads REQUIRED)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 
+find_package(Eigen3 QUIET)
+
 ################################################################
 # Fetch libraries
 
@@ -77,3 +79,9 @@ target_link_libraries(ceres_example_3 PRIVATE ceres)
 add_executable(simplex_example_4 source/example4/main.cpp)
 target_include_directories(simplex_example_4 PRIVATE include)
 
+if (Eigen3_FOUND)
+	add_executable(example_5_eigen source/example5/main.cpp)
+	target_link_libraries(example_5_eigen PRIVATE Eigen3::Eigen)
+else()
+    message(STATUS "Eigen not found. Skipping Eigen-dependent examples.")
+endif()
