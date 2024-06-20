@@ -24,6 +24,15 @@ or similar directory, unless binary is run from MSVC.
 Compilation works with both Microsoft C++ Compliler (`x64-Debug`) and Clang (`x64-Clang-Debug`) giving different warning messages
 when something in templated code is wrong and it's higher chance that one of output can be parsed by us, humans.
 
+> TODO: Fix Eigen, sometimes found, sometimes not, `Eigen3_DIR` ?
+> TODO: Should be added to CMakeLists.txt and fetched
+
+### VS Code
+
+This needs MSVC2022 installed. On top of that CMake Extension (`twxs.cmake`) and C/C++ extension (`ms-vscode.cpptools`) must be installed.
+Then press `Ctrl+Shift+P` for command menu and search: `CMake: Select a Kit` and select `Visual Studio Community 2022 Release - amd64`.
+
+> TODO: CMake Tools ext?
 
 ## Example 1 
 
@@ -128,6 +137,10 @@ Final solution:
     y = 2.23902*exp(-1.89233*x) + 0.959393*exp(-0.195078*x)
 Number of calls: 2517
 ```
+
+### Example 5
+
+> Eigen. TBD
 
 ## Summary
 
